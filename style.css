@@ -1,40 +1,56 @@
+:root{
+    --color-black: #000;
+    --color-white: #FFF;
+    --color-green: #090;
+}
+*{
+    box-sizing: border-box;
+}
 body{
-    background-color: #DDD;
+    background-color: var(--color-green);
     margin: 0;
 }
 nav{
     width: 100vw;
-    background-color: #000;
+    background-color: var(--color-black);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-white);
 }
+nav label, nav input{ display: none;}
+nav .logo,nav label{ padding: 15px; }
 nav ul{
     list-style: none;
     padding: 0;
     display: flex;
-    flex: auto;
+    /* flex: auto; */
     flex-direction: row; 
     justify-content: center;
     position: relative;
+    margin: 0;
 }
 nav a{
-    color: #FFF;
+    color: var(--color-white);
     text-decoration: none;
 }
 ul li{
-    color: #FFF;
+    color: var(--color-white);
     padding: 15px;
 }
 ul li:hover{
-    background-color: #090;
+    background-color: var(--color-green);
 }
 nav li ul{
     position: absolute;
     display: block;    
-    background-color: #000;
+    background-color: var(--color-black);
     margin-top: 15px;
     margin-left: -15px;
 }
 nav ul li ul li{
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid var(--color-white);
 }
 nav li>ul{
     display: none;
@@ -46,16 +62,40 @@ nav li:hover>ul {
     display: block;
 }
 
-@media (max-width: 400px ){
+@media (max-width: 600px ){
+    nav{
+        display: block;       
+    }
+    nav .logo{ display: inline-block }
+    nav label{
+        display: inline-block;
+        float: right;
+    }
+    nav input:checked ~ .nav-menu{
+        /* margin: 0%; */
+        width: 100%;
+        margin: 0px;
+        border-top: 1px solid var(--color-white);
+    }
     nav a{
         padding-left: 15px;
     }
-    nav ul{
+    nav .nav-menu{
+        position: absolute;
         flex-direction: column;
+        transition: all .5s;
+        
+        margin-left: -100%;
+        width: 0;
+        background-color: var(--color-black);
     }
     nav ul li{
         padding: 15px 0;
+        border-bottom: 1px solid var(--color-white);
     }
+    /* nav ul li:last-child{
+        border: none;
+    } */
     nav li ul{
         position: relative;
         margin-left: 0;
