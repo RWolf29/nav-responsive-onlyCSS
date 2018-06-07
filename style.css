@@ -1,0 +1,66 @@
+body{
+    background-color: #DDD;
+    margin: 0;
+}
+nav{
+    width: 100vw;
+    background-color: #000;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex: auto;
+    flex-direction: row; 
+    justify-content: center;
+    position: relative;
+}
+nav a{
+    color: #FFF;
+    text-decoration: none;
+}
+ul li{
+    color: #FFF;
+    padding: 15px;
+}
+ul li:hover{
+    background-color: #090;
+}
+nav li ul{
+    position: absolute;
+    display: block;    
+    background-color: #000;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+nav ul li ul li{
+    border-bottom: 1px solid #FFF;
+}
+nav li>ul{
+    display: none;
+}
+ul li ul li:hover{
+    background-color: rgb(93, 125, 214);
+}
+nav li:hover>ul {
+    display: block;
+}
+
+@media (max-width: 400px ){
+    nav a{
+        padding-left: 15px;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    nav ul li{
+        padding: 15px 0;
+    }
+    nav li ul{
+        position: relative;
+        margin-left: 0;
+    }
+    nav li:hover li {
+        padding: 15px 0 15px 0;
+    }
+}
