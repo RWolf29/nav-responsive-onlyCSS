@@ -62,6 +62,10 @@ nav li:hover>ul {
     display: block;
 }
 
+nav li.active{
+    background-color: var(--color-green);
+}
+
 @media (max-width: 600px ){
     nav{
         display: block;       
